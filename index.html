@@ -4,14 +4,470 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yimou's Robotics and Embodied AI Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'PT Serif', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Navigation Menu */
+        header {
+            width: 100%;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-menu {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .blog-title {
+            font-size: 1.5em;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover, 
+        .nav-links li a.active {
+            color: #e91e63;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #333;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #e91e63;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 90px auto 40px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            margin-bottom: 40px;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        .profile-text h1 {
+            margin-top: 0;
+            color: #4A75E6;
+        }
+
+        /* Browse Options */
+        .browse-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 15px;
+        }
+
+        .view-toggle button {
+            padding: 8px 15px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .view-toggle button.active {
+            background: #4A75E6;
+            color: white;
+            border-color: #4A75E6;
+        }
+
+        /* Categories */
+        .categories {
+            margin-bottom: 30px;
+        }
+
+        .category {
+            margin-bottom: 15px;
+        }
+
+        .category-header {
+            background: #f5f5f5;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+        }
+
+        .category-header:hover {
+            background: #e9e9e9;
+        }
+
+        .category-content {
+            padding: 10px 15px;
+            display: none;
+        }
+
+        .subcategory {
+            margin: 10px 0;
+            padding-left: 15px;
+        }
+
+        .subcategory-header {
+            background: #f9f9f9;
+            padding: 8px 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+        }
+
+        .subcategory-content {
+            padding: 5px 15px;
+            display: none;
+        }
+
+        /* Posts */
+        .post-list {
+            display: none; /* Hidden by default */
+        }
+
+        .post {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .post:hover {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .post-title {
+            margin-top: 0;
+            color: #4A75E6;
+        }
+
+        .post-date {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .post a {
+            color: #4A75E6;
+            text-decoration: none;
+        }
+
+        .post a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Yimou's Robotics and Embodied AI Blog</h1>
-    <p>This is where I share my research, thoughts, and work on robotics and embodied AI.</p>
-    <ul>
-        <li><a href="post1.html">Post 1: Introduction to Robotics</a></li>
-        <li><a href="post2.html">Post 2: Embodied AI Fundamentals</a></li>
-        <li><a href="post3.html">Post 3: My Research on Control Algorithms</a></li>
-    </ul>
+    <!-- Navigation Menu -->
+    <header>
+        <nav class="nav-menu">
+            <a href="#" class="blog-title">Yimou's Blog</a>
+            <ul class="nav-links">
+                <li><a href="https://yimouwu.github.io" target="_blank">About Me</a></li>
+                <li><a href="#" class="active">Blog</a></li>
+                <!-- <li><a href="#" id="categories-link">Categories</a></li>
+                <li><a href="#" id="timeline-link">Timeline</a></li> -->
+            </ul>
+            <div class="social-icons">
+                <a href="mailto:yimouwu0@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://github.com/yimouwu" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://scholar.google.com/" target="_blank"><i class="ai ai-google-scholar"></i></a>
+                <a href="https://www.linkedin.com/in/kevin-y-w-33aa0a315/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <img src="assets/profile Medium.jpeg" alt="Yimou Wu" class="profile-image">
+            <div class="profile-text">
+                <h1>Welcome to Yimou's Robotics and Embodied AI Blog</h1>
+                <p>This is where I share my research, thoughts, and work on robotics and embodied AI. Here you'll find literature reviews, paper analyses, and technical deep dives into topics like Kalman Filters, Jacobian Matrices, Model Predictive Control, and more.</p>
+                <p>I'm currently focusing on robotics research, particularly in control systems and machine learning applications for robotic manipulators.</p>
+            </div>
+        </section>
+
+        <!-- Browse Options -->
+        <div class="browse-options">
+            <h2>Browse Content</h2>
+            <div class="view-toggle">
+                <button id="category-view-btn" class="active">Category View</button>
+                <button id="timeline-view-btn">Timeline View</button>
+            </div>
+        </div>
+
+        <!-- Categories View -->
+        <div id="categories-view" class="categories">
+            <!-- Comprehensive Literature Review Category -->
+            <div class="category">
+                <div class="category-header">
+                    <span>Comprehensive Literature Review</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-content">
+                    <!-- Jacobian Matrix Subcategory -->
+                    <div class="subcategory">
+                        <div class="subcategory-header">
+                            <span>Jacobian Matrix</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subcategory-content">
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Jacobian%20Matrix/雅可比矩阵：概念、推导与应用.md">雅可比矩阵：概念、推导与应用</a></h3>
+                                <p class="post-date">Last updated: May 15, 2024</p>
+                            </div>
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Jacobian%20Matrix/雅可比矩阵（Jacobian%20Matrix）深度解析与应用.md">雅可比矩阵（Jacobian Matrix）深度解析与应用</a></h3>
+                                <p class="post-date">Last updated: April 2, 2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kalman Filter Subcategory -->
+                    <div class="subcategory">
+                        <div class="subcategory-header">
+                            <span>Kalman Filter</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subcategory-content">
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Kalman%20Filter/Error-State%20Kalman%20Filter%20(ESKF).md">Error-State Kalman Filter (ESKF)</a></h3>
+                                <p class="post-date">Last updated: June 1, 2024</p>
+                            </div>
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Kalman%20Filter/Kalman%20filtering%20from%20theory%20to%20practice.md">Kalman Filtering from Theory to Practice</a></h3>
+                                <p class="post-date">Last updated: May 20, 2024</p>
+                            </div>
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Kalman%20Filter/What%20is%20Kalman%20Filters.md">What is Kalman Filters</a></h3>
+                                <p class="post-date">Last updated: April 15, 2024</p>
+                            </div>
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Kalman%20Filter/卡尔曼滤波Clang.pdf">卡尔曼滤波Clang.pdf</a></h3>
+                                <p class="post-date">Last updated: March 10, 2024</p>
+                            </div>
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Kalman%20Filter/PID算法Clang.pdf">PID算法Clang.pdf</a></h3>
+                                <p class="post-date">Last updated: February 28, 2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional subcategories would be added here -->
+                    <div class="subcategory">
+                        <div class="subcategory-header">
+                            <span>ML</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subcategory-content">
+                            <!-- ML posts would go here -->
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/ML/Comprehensive%20Introduction%20to%20Linear%20Regression.md">Comprehensive Introduction to Linear Regression</a></h3>
+                                <p class="post-date">Last updated: May 5, 2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <div class="subcategory-header">
+                            <span>Model Predictive Control (MPC)</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subcategory-content">
+                            <!-- MPC posts would go here -->
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Model%20Predictive%20Control%20(MPC)%20-%20模型预测控制/Model%20Predictive%20Control%20(MPC)%20-%20Summary%20and%20Analysis.md">Model Predictive Control (MPC) - Summary and Analysis</a></h3>
+                                <p class="post-date">Last updated: June 5, 2024</p>
+                            </div>
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Model%20Predictive%20Control%20(MPC)%20-%20模型预测控制/Predictive%20End-Effector%20Control%20of%20Manipulators%20on%20Moving%20Platforms%20Under%20Disturbance_REVIEW.md">Predictive End-Effector Control of Manipulators on Moving Platforms Under Disturbance - REVIEW</a></h3>
+                                <p class="post-date">Last updated: May 25, 2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <div class="subcategory-header">
+                            <span>Paper Analysis</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subcategory-content">
+                            <!-- Paper Analysis posts would go here - just showing a few examples -->
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Paper%20Analysis/CoRL%202024%20最佳论文及提名（Outstanding%20Paper%20Award%20Winners%20and%20Finalists）.md">CoRL 2024 最佳论文及提名（Outstanding Paper Award Winners and Finalists）</a></h3>
+                                <p class="post-date">Last updated: June 10, 2024</p>
+                            </div>
+                            <div class="post">
+                                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Paper%20Analysis/Catch%20It!%20Learning%20to%20Catch%20in%20Flight%20with%20Mobile%20Dexterous%20Hands%20-%20REVIEW.md">Catch It! Learning to Catch in Flight with Mobile Dexterous Hands - REVIEW</a></h3>
+                                <p class="post-date">Last updated: May 30, 2024</p>
+                            </div>
+                            <!-- More posts would be listed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline View -->
+        <div id="timeline-view" class="post-list">
+            <!-- All posts sorted by date would appear here -->
+            <div class="post">
+                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Paper%20Analysis/CoRL%202024%20最佳论文及提名（Outstanding%20Paper%20Award%20Winners%20and%20Finalists）.md">CoRL 2024 最佳论文及提名（Outstanding Paper Award Winners and Finalists）</a></h3>
+                <p class="post-date">June 10, 2024</p>
+                <p class="post-category">Category: Comprehensive Literature Review > Paper Analysis</p>
+            </div>
+            <div class="post">
+                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Model%20Predictive%20Control%20(MPC)%20-%20模型预测控制/Model%20Predictive%20Control%20(MPC)%20-%20Summary%20and%20Analysis.md">Model Predictive Control (MPC) - Summary and Analysis</a></h3>
+                <p class="post-date">June 5, 2024</p>
+                <p class="post-category">Category: Comprehensive Literature Review > Model Predictive Control (MPC)</p>
+            </div>
+            <div class="post">
+                <h3 class="post-title"><a href="comprehensive%20Literature%20Review/Kalman%20Filter/Error-State%20Kalman%20Filter%20(ESKF).md">Error-State Kalman Filter (ESKF)</a></h3>
+                <p class="post-date">June 1, 2024</p>
+                <p class="post-category">Category: Comprehensive Literature Review > Kalman Filter</p>
+            </div>
+            <!-- More posts would be added here in chronological order -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle category content
+            document.querySelectorAll('.category-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                    this.querySelector('i').classList.toggle('fa-chevron-down');
+                    this.querySelector('i').classList.toggle('fa-chevron-up');
+                });
+            });
+
+            // Toggle subcategory content
+            document.querySelectorAll('.subcategory-header').forEach(header => {
+                header.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent triggering parent category
+                    const content = this.nextElementSibling;
+                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                    this.querySelector('i').classList.toggle('fa-chevron-down');
+                    this.querySelector('i').classList.toggle('fa-chevron-up');
+                });
+            });
+
+            // Toggle between Category and Timeline views
+            const categoryViewBtn = document.getElementById('category-view-btn');
+            const timelineViewBtn = document.getElementById('timeline-view-btn');
+            const categoriesView = document.getElementById('categories-view');
+            const timelineView = document.getElementById('timeline-view');
+            const categoriesLink = document.getElementById('categories-link');
+            const timelineLink = document.getElementById('timeline-link');
+
+            function showCategoryView() {
+                categoriesView.style.display = 'block';
+                timelineView.style.display = 'none';
+                categoryViewBtn.classList.add('active');
+                timelineViewBtn.classList.remove('active');
+                categoriesLink.classList.add('active');
+                timelineLink.classList.remove('active');
+            }
+
+            function showTimelineView() {
+                categoriesView.style.display = 'none';
+                timelineView.style.display = 'block';
+                categoryViewBtn.classList.remove('active');
+                timelineViewBtn.classList.add('active');
+                categoriesLink.classList.remove('active');
+                timelineLink.classList.add('active');
+            }
+
+            // Initial view is category view
+            showCategoryView();
+
+            // Button event listeners
+            categoryViewBtn.addEventListener('click', showCategoryView);
+            timelineViewBtn.addEventListener('click', showTimelineView);
+
+            // Nav link event listeners
+            categoriesLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showCategoryView();
+            });
+
+            timelineLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showTimelineView();
+            });
+        });
+    </script>
 </body>
 </html>

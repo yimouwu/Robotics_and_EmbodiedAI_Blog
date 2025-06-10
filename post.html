@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Title - Yimou's Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <!-- Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github.css">
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/highlight.min.js"></script>
+    <!-- Math rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* Include styles from index.html */
+        body {
+            font-family: 'PT Serif', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Navigation Menu */
+        header {
+            width: 100%;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-menu {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .blog-title {
+            font-size: 1.5em;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #e91e63;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #333;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #e91e63;
+        }
+
+        /* Content */
+        .post-container {
+            max-width: 900px;
+            margin: 90px auto 40px;
+            padding: 0 20px;
+        }
+
+        .post-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .post-title {
+            margin-bottom: 10px;
+            color: #4A75E6;
+        }
+
+        .post-meta {
+            color: #999;
+            font-size: 0.9em;
+            display: flex;
+            gap: 15px;
+        }
+
+        .post-content {
+            line-height: 1.8;
+        }
+
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .post-content pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        .post-content code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid #4A75E6;
+            padding-left: 15px;
+            margin-left: 0;
+            color: #555;
+        }
+
+        .post-content h1, 
+        .post-content h2, 
+        .post-content h3, 
+        .post-content h4, 
+        .post-content h5, 
+        .post-content h6 {
+            color: #4A75E6;
+            margin-top: 30px;
+        }
+
+        .post-content a {
+            color: #4A75E6;
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        .post-content table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .post-content th, 
+        .post-content td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+        }
+
+        .post-content th {
+            background-color: #f5f5f5;
+        }
+
+        /* PDF Viewer */
+        .pdf-container {
+            width: 100%;
+            height: 800px;
+            margin: 20px 0;
+        }
+
+        /* Back button */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #4A75E6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <header>
+        <nav class="nav-menu">
+            <a href="index.html" class="blog-title">Yimou's Blog</a>
+            <ul class="nav-links">
+                <li><a href="https://yimouwu.github.io" target="_blank">About Me</a></li>
+                <li><a href="index.html">Articles</a></li>
+                <li><a href="index.html#categories-view">Categories</a></li>
+                <li><a href="index.html#timeline-view">Timeline</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="mailto:yimouwu0@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://github.com/yimouwu" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://scholar.google.com/" target="_blank"><i class="ai ai-google-scholar"></i></a>
+                <a href="https://www.linkedin.com/in/kevin-y-w-33aa0a315/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="post-container">
+        <a href="javascript:history.back()" class="back-button">← Back to Posts</a>
+        
+        <div class="post-header">
+            <h1 class="post-title" id="post-title">Loading post...</h1>
+            <div class="post-meta">
+                <span class="post-date" id="post-date">Loading date...</span>
+                <span class="post-category" id="post-category">Loading category...</span>
+            </div>
+        </div>
+
+        <div class="post-content" id="post-content">
+            Loading content...
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postPath = urlParams.get('path');
+            
+            if (!postPath) {
+                document.getElementById('post-content').innerHTML = '<p>Error: No post specified.</p>';
+                return;
+            }
+
+            // Extract title and category from path
+            const pathParts = postPath.split('/');
+            const fileName = pathParts[pathParts.length - 1];
+            const title = fileName.replace(/\.[^/.]+$/, "").replace(/%20/g, " ");
+            const category = pathParts.slice(0, -1).join(' > ').replace(/%20/g, " ");
+            
+            document.getElementById('post-title').textContent = title;
+            document.getElementById('post-category').textContent = `Category: ${category}`;
+            document.title = `${title} - Yimou's Blog`;
+
+            // Set a placeholder date (in a real implementation, you'd get this from file metadata)
+            document.getElementById('post-date').textContent = 'June 10, 2024';
+
+            // Check file extension
+            if (postPath.endsWith('.pdf')) {
+                // For PDF files, embed a PDF viewer
+                const pdfContent = `
+                    <object class="pdf-container" data="${postPath}" type="application/pdf">
+                        <p>It appears you don't have a PDF plugin for this browser. 
+                        You can <a href="${postPath}">click here to download the PDF file</a>.</p>
+                    </object>
+                `;
+                document.getElementById('post-content').innerHTML = pdfContent;
+            } else {
+                // For Markdown files, fetch and render the content
+                fetch(postPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Failed to fetch post content');
+                        }
+                        return response.text();
+                    })
+                    .then(markdown => {
+                        // Convert Markdown to HTML
+                        const html = marked.parse(markdown);
+                        document.getElementById('post-content').innerHTML = html;
+                        
+                        // Apply syntax highlighting to code blocks
+                        document.querySelectorAll('pre code').forEach((block) => {
+                            hljs.highlightBlock(block);
+                        });
+                        
+                        // Render math expressions
+                        if (window.MathJax) {
+                            MathJax.typeset();
+                        }
+                    })
+                    .catch(error => {
+                        document.getElementById('post-content').innerHTML = `
+                            <p>Error loading post: ${error.message}</p>
+                            <p>You may need to access this content directly or download the file:</p>
+                            <p><a href="${postPath}" target="_blank">Open or download ${fileName}</a></p>
+                        `;
+                    });
+            }
+        });
+    </script>
+</body>
+</html>
