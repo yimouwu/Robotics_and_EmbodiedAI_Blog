@@ -93,5 +93,5 @@ Learning Approaches to Grasp Synthesis: A Review”*，总结了近十年六自�
 
 ## **参考文献**
 
-R. Newbury et al., *"Deep Learning Approaches to Grasp Synthesis: A Review"*, in IEEE Transactions on Robotics, vol. 39,
+R. Newbury et al., *"Deep_Learning_Approaches_to_Grasp_Synthesis: A Review"*, in IEEE Transactions on Robotics, vol. 39,
 no. 5, pp. 3994-4015, Oct. 2023, doi: [10.1109/TRO.2023.3280597](https://doi.org/10.1109/TRO.2023.3280597).
